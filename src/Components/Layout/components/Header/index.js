@@ -15,7 +15,22 @@ const cx = classNames.bind(styles);
 const MenuItem = [
     {
         icon: <FontAwesomeIcon icon={faEarth} />,
-        title: 'English'
+        title: 'English',
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt'
+                },
+            ]
+        }
     },
     {
         icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -33,7 +48,15 @@ function Header() {
         setTimeout(()=>(
             setSearchResult([])
         ),3000)
-    }, [])
+    }, []);
+    const handleMenuChange = (menuItem) => {
+        switch(menuItem.type){
+            case 'language':
+                    // Change 
+                break;
+            default:
+        }
+    };
     return  <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <img src={images.logo} alt="Tiktok" />
@@ -64,7 +87,7 @@ function Header() {
                 <div className={cx('actions')}>
                 <Button text>Upload</Button>
                 <Button primary >Log in</Button>
-                <Menu items={MenuItem}>
+                <Menu items={MenuItem} onChange={handleMenuChange}>
                     <button className={cx('more-btn')}>
                         <FontAwesomeIcon icon={faEllipsisVertical} />
                     </button>
