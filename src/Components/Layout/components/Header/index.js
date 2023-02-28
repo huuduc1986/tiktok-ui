@@ -1,16 +1,32 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faCircleXmark, faEarth, faEllipsisVertical, faKeyboard, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
+
 import { Wrapper as PopperWrapper } from '~/Components/Popper';
 import Button from '~/Components/Button';
-
 import styles from './Header.module.scss';
 import images from '~/access/image';
 import AccountItem from '~/Components/AccountItem';
+import Menu from '~/Components/Popper/Menu'
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
+const MenuItem = [
+    {
+        icon: <FontAwesomeIcon icon={faEarth} />,
+        title: 'English'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        title: 'Feedback and help',
+        to: './feedback'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        title: 'Keyboard shortcuts',
+    }
+]
 function Header() {
     const [SearchResult, setSearchResult] = useState([]);
     useEffect(()=>{
@@ -31,7 +47,6 @@ function Header() {
                                 <AccountItem />
                                 <AccountItem />
                                 <AccountItem />
-
                             </PopperWrapper>
                         </div>   
                     )}>
@@ -40,18 +55,20 @@ function Header() {
                 <button className={cx('clear')}>
                    <FontAwesomeIcon icon={faCircleXmark} />
                 </button>
-
                   <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-                
                 <button className={cx('search-btn')}>
                    <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
                 </div>
-                </Tippy>
+            </Tippy>
                 <div className={cx('actions')}>
                 <Button text>Upload</Button>
                 <Button primary >Log in</Button>
-
+                <Menu items={MenuItem}>
+                    <button className={cx('more-btn')}>
+                        <FontAwesomeIcon icon={faEllipsisVertical} />
+                    </button>
+                </Menu>   
                 </div>
             </div>
         </header>;
