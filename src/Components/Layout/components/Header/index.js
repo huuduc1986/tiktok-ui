@@ -122,10 +122,10 @@ function Header() {
           <Menu items={currentUser ? userMenu : MenuItem} onChange={handleMenuChange}>
             {currentUser ? (
               <Image
-                src=" "
+                src=""
                 className={cx('user-avatar')}
                 alt="user"
-                fallback = "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/05aa222706c452c8ad0ea7d2e719a745~c5_100x100.jpeg?x-expires=1677812400&x-signature=kua7U1DCv5uvZMl4Tnzq1APwQOs%3D"
+                fallback = "https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7205500932459757573~c5_100x100.jpeg?x-expires=1677996000&x-signature=ygMm1preyfqZnZ3sy2UQ7PhDDAA%3D"
               />
             ) : (
               <>
