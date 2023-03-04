@@ -40,7 +40,7 @@ const MenuItem = [
           type: 'language',
           code: 'vi',
           title: 'Tiếng Việt',
-        },
+        },       
       ],
     },
   },
