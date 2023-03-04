@@ -9,7 +9,6 @@ const Image = forwardRef(({src, alt,
             className, 
             fallback: customFallback = images.huuduc,
             ...props}, ref) => {
-                console.log(customFallback)
     const [fallback, setFallback] = useState('');
     const handleError = ()=>{
         setFallback(customFallback);

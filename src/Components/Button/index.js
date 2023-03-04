@@ -20,10 +20,7 @@ function Button({
             ...passProps
         }){
     let Comp = 'button';
-    const props ={
-        onClick,
-        ...passProps
-    };
+    const props ={ onClick, ...passProps };
     if(disabled){
        Object.keys(props).forEach((key)=>{
         if(key.startsWith('on') && typeof props[key] === 'function'){
