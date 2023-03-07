@@ -3,10 +3,10 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/services/searchServices';
 import { Wrapper as PopperWrapper } from '~/Components/Popper';
 import AccountItem from '~/Components/AccountItem';
-import { SearchIcon } from '~/components/Icons';
+import { SearchIcon } from '~/Components/Icons';
 import { useDebounce } from '~/hooks';
 import styles from './Search.module.scss';
 
