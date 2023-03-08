@@ -125,7 +125,7 @@ function Header() {
           <Menu items={currentUser ? userMenu : MenuItem} onChange={handleMenuChange}>
             {currentUser ? (
               <Image
-                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7205500932459757573~c5_100x100.jpeg?x-expires=1677996000&x-signature=ygMm1preyfqZnZ3sy2UQ7PhDDAA%3D"
+                src="https://vercel.com/api/www/avatar/b4fc9466ab3221a59aebff5a6903519f75a9a555?s=64"
                 className={cx('user-avatar')}
                 alt="user"
                 
