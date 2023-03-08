@@ -89,6 +89,7 @@ function Header() {
       separate: true,
     },
   ];
+
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
