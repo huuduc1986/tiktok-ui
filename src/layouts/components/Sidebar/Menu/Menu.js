@@ -1,14 +1,11 @@
 import propTypes from 'prop-types';
 
-
 function Menu({ children }) {
-  return <nav>
-            {children}
-        </nav>;
-};
+  return <nav>{children}</nav>;
+}
 
 Menu.propTypes = {
-    children: propTypes.node.isRequired,
+  children: propTypes.node.isRequired,
 };
 
 export default Menu;
